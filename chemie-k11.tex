@@ -1,0 +1,100 @@
+%% <school/Epochenheft.tex> template 1.1.1 by Robin `ypid` Schneider <ypid23@aol.de>
+%% The current version can be found on: https://github.com/ypid/typesetting/blob/master/templates/school/Epochenheft.tex
+%%% preamble
+%\RequirePackage{snapshot}		%% \jobname.dep
+%\listfiles %% listfiles to logfile
+\RequirePackage{RequirePackageRS}
+\documentclass[12pt,a4paper,ngerman,numbers=noenddot,toc=listof,toc=bib,fleqn]{scrartcl} %%% ,draft
+\usepackage[nohyperlinks,printonlyused]{acronym}     % nolist,withpage,footnote %% Abkürzungsverzeichnis
+\usepackage{
+	physicsRS,
+	scrartclRS,
+	defaultRS,
+%	literatureRS,
+%	debugRS,
+	timeRS,
+	graphicRS,
+	mathematicsRS,
+%	gamesRS,
+	layoutRS,
+	footingRS,
+	extensionsRS,
+	docExtensionsRS,
+	schoolRS,
+	chemistryRS,
+}
+%% specific indications
+\readgitstat{7}
+\SetTITEL{Chemie}
+\SetAUTHOR{1}{}
+\SetKLASSE{11}
+\SetSUBJECT{Salze, Säuren, Basen}
+\SetURL{http://ypid.files.wordpress.com/2013/04/chemie-k11.pdf}
+\SetGitURL{https://github.com/ypid/document-Chemie-K11}
+\choosedefaultlicense
+\SetCREATEDATE{2010}{09}{14}{15}{00}{00}		%% {YYYY}{MM}{DD}{HH}{MM}{SS}
+\SetABGABEDATUM{2}{2010}{10}{11}{1}
+\usepackage{
+	schoolPDFinfoRS,
+	tableRS,
+}
+%\SetDraft{on}
+\input{files/header/hacks}
+%%% body
+\begin{document}
+\pdfbookmark[2]{\Titlepagename}{toc}\pagenumbering{Roman}\thispagestyle{empty}
+\input{files/titlepage}
+\newpage\pdfbookmark[1]{\contentsname}{inhaltsverzeichnis}
+\tableofcontents%\vfill
+%\listoffigures
+%\listoftables
+%\lstlistoflistings	%% Quellcodeverzeichnis
+\printSectionListOfAbbreviationsChemistry
+\includeListOfAbbreviationsChemistry[multicols]
+
+\setcounter{headpages}{\value{page}}
+\newpage\pagenumbering{arabic}
+
+\input{files/chapters/einleitung}
+\input{files/chapters/salze}
+\input{files/chapters/saeuren}
+\input{files/chapters/basen}
+\input{files/chapters/rest}
+
+\setcounter{sectionsV}{\value{section}}		%% Speichert die sectionnummer vor \appendix zwischen
+\appendix	%% Sorgt für Buchstaben im Inhaltsverzeichnis
+\vfill
+
+\printURLlong
+\printlicense
+\printendsignature
+%\ifDraft{
+\newpage\Statistiken
+Status:~\progressbar{.99} (eigenes Ermessen)
+\newpage
+   \begin{sourcefiletable}{1}
+	\Isourcefile{Hauptdatei}{\jobname.tex}
+	\Isourcefile{Titelseite}{files/titlepage.tex}
+	\Isourcefile{Einleitung}{files/chapters/einleitung.tex}
+	\Isourcefile{Salze}{files/chapters/salze.tex}
+	\Isourcefile{Säuren}{files/chapters/saeuren.tex}
+	\Isourcefile{Basen}{files/chapters/basen.tex}
+	\Isourcefile{Rest}{files/chapters/rest.tex}
+  \end{sourcefiletable}
+%}{}
+%\ifDraft{
+  \begin{landscape}
+	\pagestyle{empty}
+	\pdfbookmark[2]{Versionshinweise}{versionshinweise}
+	\subsection*{Versionshinweise}
+	\input{files/git/versions-log}
+	% \printgitstatlandscape{1}
+  \end{landscape}
+	% \printgitstat{1}
+%	\subsubsection*{Dateien?}
+%	\pdfbookmark[3]{Dateien?}{files_by_date}
+%	\includegraphics[width=14cm]{files/git/stats/files_by_date-crop}
+%	\listoffixmes
+%}{}
+%\input{/home/rsadmin/Dokumente/LaTeX/input-document/Klarsichtmappe-Seitenstreifen/Schule+subject}
+\end{document}

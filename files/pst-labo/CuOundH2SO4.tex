@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{auto-pst-pdf}
+
+\pagestyle{empty}
+\usepackage{pst-labo}
+\begin{document}
+
+\newpsstyle{graulight}{linestyle=none,fillstyle=solid,fillcolor=gray!30}
+\newpsstyle{schwarz}{linestyle=none,fillstyle=solid,fillcolor=black!80}
+
+\begin{pspicture}(6,6)
+	\psset{unit=0.5cm}
+	\pstTubeEssais[unit=2.5,niveauLiquide1=60,niveauLiquide2=30,aspectLiquide2=schwarz,tubePenche=-20]
+\end{pspicture}
+
+\end{document}

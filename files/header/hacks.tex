@@ -1,0 +1,16 @@
+\newcounter{cVersuch}
+%\newcommand{\Expname}{\textcolor{bleu}{Experiment \arabic{cVersuch}:}}
+\newcommand{\Expname}{Experiment \arabic{cVersuch}:}
+\newcommand{\cVersuch}[2]{
+  \stepcounter{cVersuch}
+  \sixIF{#1}{\section{\Expname ~#2}}
+    {\subsection{\Expname ~#2}}
+    {\subsubsection{\Expname ~#2}}
+    {\pdfbookmark[1]{Experiment \arabic{cVersuch}: #2}{Experiment_\arabic{cVersuch}}
+    \section*{\Expname ~#2}}
+    {\pdfbookmark[2]{Experiment \arabic{cVersuch}: #2}{Experiment_\arabic{cVersuch}}
+    \subsection*{\Expname ~#2}}
+    {\pdfbookmark[3]{Experiment \arabic{cVersuch}: #2}{Experiment_\arabic{cVersuch}}
+    \subsubsection*{\Expname ~#2}}
+    {n.d.}
+}

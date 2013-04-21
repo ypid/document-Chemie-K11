@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{auto-pst-pdf}
+
+\pagestyle{empty}
+\usepackage{pst-labo}
+\begin{document}
+
+\definecolor{Light2Blue}{rgb}{.40,.200,.9}
+\newpsstyle{graulight}{linestyle=none,fillstyle=solid,fillcolor=gray!30}
+\newpsstyle{grau}{linestyle=none,fillstyle=solid,fillcolor=Light2Blue!80}
+
+\begin{pspicture}(6,6)
+	\psset{unit=2cm}
+	\pstTubeEssais[solide={\pstGrenailleZinc[7]},aspectLiquide1=grau]
+\end{pspicture}
+
+\end{document}

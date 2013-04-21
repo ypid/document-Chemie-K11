@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{auto-pst-pdf}
+
+\pagestyle{empty}
+\usepackage{pst-labo}
+\begin{document}
+
+\newpsstyle{graulight}{linestyle=none,fillstyle=solid,fillcolor=gray!30}
+\newpsstyle{grau}{linestyle=none,fillstyle=solid,fillcolor=gray!60}
+
+\psset{unit=0.5cm}
+
+\begin{pspicture}(8,6)
+	%\psset{unit=2cm}
+	\pstTubeEssais[glassType=flacon,xunit=0.55cm,aspectLiquide1=Sang,etiquette,Numero={\small KOH},niveauLiquide1=96,aspectLiquide1=BilleThreeD]
+\end{pspicture}
+
+\end{document}

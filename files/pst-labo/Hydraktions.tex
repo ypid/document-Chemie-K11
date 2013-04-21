@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{auto-pst-pdf}
+
+\pagestyle{empty}
+\usepackage{pst-labo}
+\begin{document}
+
+\newpsstyle{graulight}{linestyle=none,fillstyle=solid,fillcolor=gray!30}
+\newpsstyle{grau}{linestyle=none,fillstyle=solid,fillcolor=gray!60}
+
+\begin{pspicture}(6,6)
+	\psset{unit=0.5cm}
+	\pstTubeEssais[etiquette,Numero=1]
+	\pstTubeEssais[etiquette,Numero=2]
+	\pstTubeEssais[etiquette,Numero=3,aspectLiquide1=grau]
+	\pstTubeEssais[etiquette,Numero=4,aspectLiquide1=graulight]
+\end{pspicture}
+
+\end{document}
